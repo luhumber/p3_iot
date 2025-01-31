@@ -1,10 +1,12 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-1
   labels:
     app: app-1
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: "wil42/playground"
+    argocd-image-updater.argoproj.io/app-1.update-strategy: "semver"
 spec:
   replicas: 1
   selector:
@@ -17,6 +19,5 @@ spec:
     spec:
       containers:
       - name: app-1
-        image: wil42/playground:v1
+        image: wil42/playground:v1  # Déploiement initial en v1
         imagePullPolicy: IfNotPresent
----
