@@ -22,4 +22,6 @@ spec:
       - name: app-1
         image: wil42/playground:v2  # Déploiement initial en v1
         imagePullPolicy: IfNotPresent
+    ports:
+      - containerPort: 8080
 ---
