@@ -8,6 +8,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: "wil42/playground"
     argocd-image-updater.argoproj.io/app-1.update-strategy: "semver"
+  namespace: dev
 spec:
   replicas: 1
   selector:
